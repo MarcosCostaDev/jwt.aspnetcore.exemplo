@@ -1,0 +1,98 @@
+{
+	"info": {
+		"name": "ExemploApiToken",
+		"_postman_id": "cd2e47e2-356f-4a7d-94c4-8ee8e21989e0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "autenticar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"usuario\": \"usuario\",\n \"senha\": \"senha\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:54066/api/usuario/v1/autenticar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54066",
+					"path": [
+						"api",
+						"usuario",
+						"v1",
+						"autenticar"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Requisição com token (code 200)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6WyJ1c3VhcmlvIiwidXN1YXJpbyJdLCJqdGkiOiJmNWI4NWI3MjdlNDY0ODExYWI2OTE5Nzc0ZWI1N2UwYyIsIm5iZiI6MTUyMDY4ODA1OSwiZXhwIjoxNTIwNzc0NDU5LCJpYXQiOjE1MjA2ODgwNTksImlzcyI6ImMxZjUxZjQyIiwiYXVkIjoiYzZiYmJiNjQ1MDI0In0.0COMbPNmmO09YED6puQCnBXHp-kiFwTA-YlWy7TFZkU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:54066/api/values/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54066",
+					"path": [
+						"api",
+						"values",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Requisição sem token (code 401)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:54066/api/values/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54066",
+					"path": [
+						"api",
+						"values",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
