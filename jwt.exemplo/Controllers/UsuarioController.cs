@@ -41,7 +41,8 @@ namespace Jwt.Exemplo.Controllers
                     new GenericIdentity(usuarioBase.Usuario, "Login"),
                     new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, usuarioBase.Usuario)
+                        new Claim(JwtRegisteredClaimNames.UniqueName, usuarioBase.Usuario),
+                        new Claim("UsuarioName", usuarioBase.Usuario)
                     }
                 );
 

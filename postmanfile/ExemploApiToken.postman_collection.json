@@ -93,6 +93,76 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "Sem permissao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6WyJ1c3VhcmlvIiwidXN1YXJpbyJdLCJqdGkiOiIxZmZiY2NlN2IzNjQ0Y2Y2OGViYTFlZmEyYzZkMGM4YSIsIlVzdWFyaW9OYW1lIjoidXN1YXJpbyIsIm5iZiI6MTUyMDY5MDc3MiwiZXhwIjoxNTIwNzc3MTcyLCJpYXQiOjE1MjA2OTA3NzIsImlzcyI6ImMxZjUxZjQyIiwiYXVkIjoiYzZiYmJiNjQ1MDI0In0.gzaKZdVRyayjo1JjIlbce8czczPlQKeHJgwTcDxnZbg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:54066/api/values/v1/sempermissao/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54066",
+					"path": [
+						"api",
+						"values",
+						"v1",
+						"sempermissao",
+						"1234"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "com permissao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6WyJ1c3VhcmlvIiwidXN1YXJpbyJdLCJqdGkiOiJlMzc5ODIzNjFjYmI0MGU1ODZkYmI5MGNjZTNiM2M4ZCIsIlVzdWFyaW9OYW1lIjoidXN1YXJpbyIsIm5iZiI6MTUyMDY5MDg5NSwiZXhwIjoxNTIwNzc3Mjk1LCJpYXQiOjE1MjA2OTA4OTUsImlzcyI6ImMxZjUxZjQyIiwiYXVkIjoiYzZiYmJiNjQ1MDI0In0.wd3qwQNO_VjilHkUNyL5ewpKu6Ei7KvQw9ZEK6FVyD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:54066/api/values/v1/compermissao/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54066",
+					"path": [
+						"api",
+						"values",
+						"v1",
+						"compermissao",
+						"1234"
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

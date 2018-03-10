@@ -6,6 +6,14 @@ namespace Jwt.Exemplo.Domain.Entities
 {
     public class UsuarioEntity : Notifiable
     {
+        public UsuarioEntity(string usuario)
+        {
+            var contract = new Contract()
+             .IsNotNullOrEmpty(usuario, "Usuario", "Usuário deve ser informado");
+              AddNotifications(contract);
+            Usuario = usuario;
+        }
+
         public UsuarioEntity(string usuario, string senha)
         {
             var contract = new Contract()

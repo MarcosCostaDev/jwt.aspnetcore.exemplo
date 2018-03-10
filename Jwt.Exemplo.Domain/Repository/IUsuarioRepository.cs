@@ -6,5 +6,6 @@ namespace Jwt.Exemplo.Domain.Repository
     public interface IUsuarioRepository
     {
         UsuarioEntity Login(LoginCommand command);
+        UsuarioEntity Permissao(VerificarPermissaoCommand command);
     }
 }

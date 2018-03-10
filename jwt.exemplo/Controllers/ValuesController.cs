@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using jwt.exemplo.Authorize;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace Jwt.Exemplo.Controllers
@@ -20,10 +21,20 @@ namespace Jwt.Exemplo.Controllers
             return "value";
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpGet]
+        [Route("v1/compermissao/{value}")]
+        [ClaimRequirement("123456789")]
+        public string ComPermissao(string value)
         {
+            return $"Com permissão {value}";
+        }
+
+        [HttpGet]
+        [Route("v1/sempermissao/{value}")]
+        [ClaimRequirement("987654321")]
+        public string SemPermissao(string value)
+        {
+            return $"Sem permissão {value}";
         }
 
         // PUT api/values/5
