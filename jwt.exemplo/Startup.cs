@@ -82,7 +82,7 @@ namespace Jwt.Exemplo
             //Para todas as requisições serem necessaria o token, para um endpoint não exisgir o token
             //deve colocar o [AllowAnonymous]
             //Caso remova essa linha, para todas as requisições que precisar de token, deve colocar
-            //o atributo [Authorize]
+            //o atributo [Authorize("Bearer")]
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
