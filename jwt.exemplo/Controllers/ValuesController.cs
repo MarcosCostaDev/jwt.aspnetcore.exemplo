@@ -35,7 +35,7 @@ namespace Jwt.Exemplo.Controllers
         public string ComPermissao(string value)
         {
             var usuario = _httpContextAccessor.HttpContext.User.FindFirst("UsuarioName").Value;
-            return $"Com permissão para o usuário {usuario}";
+            return $"Com permissão para o usuário '{usuario}' e valor informado é '{value}'";
         }
 
         [HttpGet]
