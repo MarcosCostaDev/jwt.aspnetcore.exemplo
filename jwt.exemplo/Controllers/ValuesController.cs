@@ -1,4 +1,5 @@
 ﻿using jwt.exemplo.Authorize;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -7,6 +8,13 @@ namespace Jwt.Exemplo.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public ValuesController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -26,7 +34,8 @@ namespace Jwt.Exemplo.Controllers
         [ClaimRequirement("123456789")]
         public string ComPermissao(string value)
         {
-            return $"Com permissão {value}";
+            var usuario = _httpContextAccessor.HttpContext.User.FindFirst("UsuarioName").Value;
+            return $"Com permissão para o usuário {usuario}";
         }
 
         [HttpGet]
